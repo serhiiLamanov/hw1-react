@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>infobox</title>
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>аналог <a href="https://ilyalytvynov.github.io/infobox/">ilyalytvynov.github.io/infobox/</a></h1>
+        <!-- <div class="infobox-container">
+            <div class="infobox-slider"></div>
+            <div class="infobox-buttons"><button>&lt;&lt;&lt;</button><button>&lt;</button><button>&gt;</button><button>&gt;&gt;&gt;</button></div>
+        </div> -->
+        <script src = "js/infobox.js"></script>
+        <script>
+            fetch("https://my-json-server.typicode.com/IlyaLytvynov/ads-box-server/ads")
+                .then(response => response.json())
+                .then(items => new Infobox(items,document.body));
+        </script>
+    </body>
+</html>
