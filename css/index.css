@@ -38,14 +38,14 @@ body {
         cursor: pointer;
     }
     .infobox-item .collapsible{
-        max-height: 100px;
-        transition: max-height 2s;
+        /* min-height: 100px; */
+        white-space: nowrap;
+        overflow: hidden;
+        transition: height 2s;
     }
     .infobox-item .collapsible.collapsed{
         text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        max-height: 1.5em;
+        /* min-height: 1.5em; */
     }
     .infobox-item-text{
         position: absolute;

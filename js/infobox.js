@@ -16,7 +16,7 @@ class Infobox{
             <div class="infobox-item-text">
                 <h2>${item.title}</h2>
                 <p class="collapsible collapsed" onclick="this.classList.toggle('collapsed')">${item.description}</p>
-                <button class="toggle" onclick="this.previousElementSibling.classList.toggle('collapsed');">Toggle</button>
+                <button class="toggle" onclick="toggleCollapsible(this.previousElementSibling);">Toggle</button>
             </div>`
             return slider.appendChild(el);
         })
@@ -69,4 +69,22 @@ class Infobox{
         this.current = newItem;
     }
 
+}
+
+function toggleCollapsible(el){
+    if (el.classList.contains("collapsed")){
+        if(!el.style["min-height"]){
+            el.style.height = el.style["min-height"] = el.scrollHeight + "px";
+        }
+        el.classList.remove("collapsed");
+        el.style["white-space"] = "normal";
+        el.style.height = el.scrollHeight + "px";
+    }else{
+        el.style.height = el.style["min-height"];
+        setTimeout(collapse, 2000);
+    }
+    function collapse(){
+        el.style["white-space"] = "nowrap";
+        el.classList.add("collapsed");
+    }
 }
